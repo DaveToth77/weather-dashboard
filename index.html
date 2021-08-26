@@ -6,26 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Weather Dashboard</title>
+    <title>Weather-Dashboard</title>
 </head>
 
 <body>
     <header class="jumbotron">
         <h1>Weather Dashboard</h1>
     </header>
-    <main class="container-fluid">
+    <main class="container">
         <div class="row">
             <div class="col-12 col-md-3 p-2 search-column">
                 <div class="card">
                     <form class="border p-2" id="city-search-form">
                         <h2 class="card-header" id="card-top" ">Search for a City:</h2>
-                        <input id="city" type="text" autofocus="true" class="form-input" />
+                        <input id=" city" type="text" autofocus="true" class="form-input" />
                         <button class="btn btn-primary" type="submit">Search</button>
                     </form>
                 </div>
                 <hr>
                 <div class="past-search " id="past-search-buttons"></div>
             </div>
+            <div class="col-12 col-md-9">
+                <div class="row border selected-city" id="current-forecast">
+                    <div class="col-12">
+                        <h2 id="searched-city"></h2>
+                        <div id="current-weather-container" class="list-group"></div>
+                    </div>
+                </div>
+                <div class="row border" id="five-day-forecast">
+                    <h2 class="col-12" id="forecast"></h2>
+                    <div class="d-flex" id="fiveday-container"></div>
+                </div>
             </div>
         </div>
     </main>
