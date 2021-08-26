@@ -9,7 +9,7 @@
   }
 
   hr {
-      background:grey;
+      background:rgb(65, 62, 62);
       height: 2px;
   }
 
@@ -20,34 +20,53 @@
     text-align: center;
 }
 
+.search-column{
+    background-color: white;
+}
+
+.list-group-item{
+    line-height: 0.5;
+    border: none;
+}
+.card-body{
+    flex:auto;
+    background-color: #33475A;
+}
+
+.card-header{
+    background-color: #33475A;
+  
+}
+
+span.severe{
+    background-color: red;
+    color:white;
+}
+
+span.moderate{
+    background-color: yellow;
+}
+
+span.favorable{
+    background-color: green;
+    color:white;
+}
+
 .form-input {
     width: 100%;
+    padding: 3px;
+    margin-bottom: 5px;
 }
 
 .btn {
-    font-size: 1.3rem;
-    text-decoration:none;
-    padding: 6px 5px;
     width: 100%;
-    display: block;
-    margin: 5px 0;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    outline: none;
-    background-color: rgb(46, 131, 241);
-    box-shadow: 3px 3px var(--dark);
-    transform: translate(-1px, -1px);
-  }
-  
-   .btn:hover {
-    color: var(--primary);
-    background-color: var(--tertiary);
-    transform: translate(0, 0);
-    box-shadow: 2px 2px var(--dark);
-  }
-  
-  .btn-inline {
-    display: inline;
-  }
+    /* margin-bottom: 5px; */
+}
 
+.card {
+    /* margin-bottom: 10px; */
+}
+
+#card-top {
+    background-color: white;
+}

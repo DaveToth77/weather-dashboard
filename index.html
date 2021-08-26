@@ -3,14 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/CSS/style.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -18,31 +13,24 @@
     <header class="jumbotron">
         <h1>Weather Dashboard</h1>
     </header>
-    <!-- set up search city form -->
-    <main class="container-main flex-row justify-space-between">
-        <div class="form-container">
-            <div class="row">
-                <div class="col-12 col-md-3 p-2 city-form">
-                        <h3>Search for a City</h3>
-                            <input id="city" type="text" autofocus="true" class="form-input" />
-                            <button type="submit" class="btn btn-primary">Search</button>
-                        </form>
-                    </div>
-                    <hr>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-3 p-2 search-column">
+                <div class="card">
+                    <form class="border p-2" id="city-search-form">
+                        <h2 class="card-header" id="card-top" ">Search for a City:</h2>
+                        <input id="city" type="text" autofocus="true" class="form-input" />
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
                 </div>
+                <hr>
             </div>
         </div>
-        <!-- city search history -->
-
-        <!-- current search city display -->
-
-
-        <!-- 5-day forecast display -->
-
     </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-
 </body>
 
 </html>
