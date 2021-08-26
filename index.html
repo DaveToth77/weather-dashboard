@@ -19,17 +19,17 @@
         <h1>Weather Dashboard</h1>
     </header>
     <!-- set up search city form -->
-    <main class="flex-row justify-space-between">
+    <main class="container-main flex-row justify-space-between">
         <div class="form-container">
-            <div class="col-3">
-                <div class="card">
-                    <h3 class="card-header">Search for a City</h3>
-                    <form id="city-form" class="card-body">
-                        <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-                        <button type="submit" class="btn">Search</button>
-                    </form>
+            <div class="row">
+                <div class="col-12 col-md-3 p-2 city-form">
+                        <h3>Search for a City</h3>
+                            <input id="city" type="text" autofocus="true" class="form-input" />
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                    <hr>
                 </div>
-                <hr>
             </div>
         </div>
         <!-- city search history -->
