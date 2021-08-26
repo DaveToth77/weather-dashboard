@@ -6,7 +6,7 @@ var weatherContainerEl = document.querySelector("#current-weather-container");
 var citySearchInputEl = document.querySelector("#searched-city");
 var forecastTitle = document.querySelector("#forecast");
 var forecastContainerEl = document.querySelector("#fiveday-container");
-var pastSearchButtonEl = document.querySelector("#past-search-buttons");
+var pastSearchBtnEl = document.querySelector("#past-search-buttons");
 
 var formSumbitHandler = function (event) {
     event.preventDefault();
@@ -35,9 +35,10 @@ var getCityWeather = function (city) {
 
     fetch(apiURL)
         .then(function (response) {
-            response.json().then(function (data) {
-                displayWeather(data, city);
-            });
+            response.json()
+                .then(function (data) {
+                    displayWeather(data, city);
+                });
         });
 };
 
@@ -56,9 +57,9 @@ var displayWeather = function (weather, searchCity) {
     citySearchInputEl.appendChild(weatherIcon);
 
     //create span elements to hold data
-    var temperatureEl = document.createElement("span");
-    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
-    temperatureEl.classList = "list-group-item"
+    var tempEl = document.createElement("span");
+    tempEl.textContent = "Temperature: " + weather.main.temp + " °F";
+    tempEl.classList = "list-group-item"
 
     var humidityEl = document.createElement("span");
     humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
@@ -69,7 +70,7 @@ var displayWeather = function (weather, searchCity) {
     windSpeedEl.classList = "list-group-item"
 
     //append to containers
-    weatherContainerEl.appendChild(temperatureEl);
+    weatherContainerEl.appendChild(tempEl);
 
     weatherContainerEl.appendChild(humidityEl);
 
@@ -99,18 +100,18 @@ var displayUvIndex = function (index) {
     uvIndexEl.textContent = "UV Index: "
     uvIndexEl.classList = "list-group-item"
 
-    uvIndexValue = document.createElement("span")
-    uvIndexValue.textContent = index.value
+    uvIndexVal = document.createElement("span")
+    uvIndexVal.textContent = index.value
 
     if (index.value <= 2) {
-        uvIndexValue.classList = "favorable"
+        uvIndexVal.classList = "favorable"
     } else if (index.value > 2 && index.value <= 8) {
-        uvIndexValue.classList = "moderate "
+        uvIndexVal.classList = "moderate "
     } else if (index.value > 8) {
-        uvIndexValue.classList = "severe"
+        uvIndexVal.classList = "severe"
     };
 
-    uvIndexEl.appendChild(uvIndexValue);
+    uvIndexEl.appendChild(uvIndexVal);
 
     weatherContainerEl.appendChild(uvIndexEl);
 }
@@ -168,22 +169,22 @@ var display5Day = function (weather) {
     }
 
 }
-var pastSearch = function(pastSearch){
- 
+var pastSearch = function (pastSearch) {
+
 
     pastSearchEl = document.createElement("button");
     pastSearchEl.textContent = pastSearch;
     pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
-    pastSearchEl.setAttribute("data-city",pastSearch)
+    pastSearchEl.setAttribute("data-city", pastSearch)
     pastSearchEl.setAttribute("type", "submit");
 
-    pastSearchButtonEl.prepend(pastSearchEl);
+    pastSearchBtnEl.prepend(pastSearchEl);
 }
 
 
-var pastSearchHandler = function(event){
+var pastSearchHandler = function (event) {
     var city = event.target.getAttribute("data-city")
-    if(city){
+    if (city) {
         getCityWeather(city);
         get5Day(city);
     }
@@ -191,4 +192,4 @@ var pastSearchHandler = function(event){
 
 
 cityFormEl.addEventListener("submit", formSumbitHandler);
-pastSearchButtonEl.addEventListener("click", pastSearchHandler);
+pastSearchBtnEl.addEventListener("click", pastSearchHandler);
