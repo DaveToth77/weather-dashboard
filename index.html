@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +13,36 @@
 
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header class="jumbotron">
         <h1>Weather Dashboard</h1>
     </header>
+    <!-- set up search city form -->
+    <main class="flex-row justify-space-between">
+        <div class="form-container">
+            <div class="col-3">
+                <div class="card">
+                    <h3 class="card-header">Search for a City</h3>
+                    <form id="city-form" class="card-body">
+                        <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+                        <button type="submit" class="btn">Search</button>
+                    </form>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <!-- city search history -->
+
+        <!-- current search city display -->
+
+
+        <!-- 5-day forecast display -->
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>
