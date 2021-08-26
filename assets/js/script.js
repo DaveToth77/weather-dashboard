@@ -37,4 +37,29 @@ var getCityWeather = function (city) {
             });
         });
 };
+var pastSearch = function (pastSearch) {
 
+    // console.log(pastSearch)
+
+    pastSearchEl = document.createElement("button");
+    pastSearchEl.textContent = pastSearch;
+    pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
+    pastSearchEl.setAttribute("data-city", pastSearch)
+    pastSearchEl.setAttribute("type", "submit");
+
+    pastSearchButtonEl.prepend(pastSearchEl);
+}
+
+
+var pastSearchHandler = function (event) {
+    var city = event.target.getAttribute("data-city")
+    if (city) {
+        getCityWeather(city);
+        get5Day(city);
+    }
+}
+
+// pastSearch();
+
+cityFormEl.addEventListener("submit", formSumbitHandler);
+pastSearchButtonEl.addEventListener("click", pastSearchHandler);
