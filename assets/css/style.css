@@ -1,0 +1,6 @@
+.jumbotron {
+    color: white;
+    background-image: linear-gradient(to right, rgb(87, 87, 240) , rgb(23, 23, 80));
+    height: 30px;
+    text-align: center;
+}
